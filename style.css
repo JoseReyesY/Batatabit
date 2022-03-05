@@ -1,0 +1,559 @@
+
+/* Convencion utilizada para dar estilos
+1. Posicionamiento
+2. Modelo de Caja (Box model): margin, padding, width, height...
+3. Tipografía: tipos de fuentes
+4. Visuales: box-shadow ...
+5. Otros
+*/
+:root{
+    /*Varibles de colores a utilizar*/
+    --bitcoin-orange: #F7931A;
+    --soft-orange: #FFE9D5;
+    --secondary-blue: #1A9AF7;
+    --soft-blue: #E7F5FF;
+    --warm-black: #201E1C;
+    --black: #282623;
+    --gray: #BABABA;
+    --off-white: #FAF8F7;
+    --just-white: #FFFFFF;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+}
+header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 310px; /*Medida más pequeña del width*/
+    height: 325px;
+    text-align: center;
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+}
+header img{
+    width: 150px;
+    height: 24px;
+    margin-top: 40px;
+    align-self: center; /*Forma de centrar a un elemento con un contenedor con display flex*/
+}
+header .header-title-container h1{
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem; /*Dimension que tiene de altura nuestra fuente*/
+    color: var(--just-white);
+}
+header .header-title-container p{
+    margin-top: 24px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 18px;
+    color: var(--soft-orange);
+}
+.header-title-container{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    margin-top: 50px;
+    text-align: center;
+    align-self: center;
+}
+.header-title-container .header-button{
+    position: absolute; /*Toma como relative el padre y se puede posicionar en cualquier parte*/
+    left: calc(50% - 113px); /*Calcular la posición de nuestro botón*/
+    top: 270px;
+    display: block;
+    margin-top: 30px;
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background-color: var(--off-white);
+    /*Sombra*/
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--warm-black);
+}
+.header-button span{
+    display: inline-block; /*Necesario para que se vea el span*/
+    width: 13px;
+    height: 8px;
+    margin-left: 10px;
+    background-image: url('./assets/icons/vector-down.svg'); /*Para salir de una carpeta es con dos puntos*/
+}
+main{
+    width: 100%;
+    height: auto; /*El contenido define la altura*/
+    background-color: var(--off-white);
+}
+.main-exchange-container{
+    width: 100%;
+    height: auto;
+    padding-top: 70px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.main-exchange-container-title{
+    width: 90%;
+    min-width: 288px; /*Limita el ancho minimo*/
+    max-width: 900px; /*Limita el ancho maximo*/
+    margin: 0 auto; /*Se posiciona en el centro*/
+}
+.main-exchange-container .background-img{
+    width: 195px;
+    height: 195px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-image: url('./assets/imgs/bitcoin.svg');
+    /*Buenas practicas con imagenes de fondo*/
+    background-size: cover; /*Adapte el tamaño de la imagen a las medidas establecidas*/
+    background-position: center; /*Siempre veamos el centro de la imagen*/
+    background-repeat: no-repeat; /*No se repite la imagen*/
+}
+.main-exchange-container h2{
+    margin-bottom: 24px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--warm-black);
+}
+.main-exchange-container p{
+    margin-bottom: 48px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+    ;
+}
+.main-currency-table{
+    width: 50%;
+    min-width: 235px;
+    max-width: 500px;
+    height: 360px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+}
+.main-currency-table .currency-table--title{
+    margin-bottom: 12px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--bitcoin-orange);
+}
+.main-tables-container{
+    margin: 0 10px;
+    display: flex;
+    height: auto;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+.currency-table--container{
+    width: 50%;
+    min-width: 230px;
+    max-width: 300px;
+    margin-right: 40px;
+    height: 250px;
+    margin: 0 auto;
+}
+.currency-table--container table{
+    scroll-snap-align: center;
+    width: 100%;
+    height: 100%;
+}
+.currency-table--container td{
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: #B5B0AC;
+    background-color: var(--just-white);
+}
+.currency-table--container .table__top-left{
+    border-radius: 15px 0 0 0;
+}
+.currency-table--container .table__top-right{
+    border-radius: 0 15px 0 0;
+}
+.currency-table--container .table__bottom-left{
+    border-radius: 0 0 0 15px;
+}
+.currency-table--container .table__bottom-right{
+    border-radius: 0 0 15px 0;
+}
+.table-right{
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    color: #757575;
+}
+.currency-table--container .down{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url('./assets/icons/down-arrow.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.currency-table--container .up{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url('./assets/icons/up-arrow.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.currency-table--date{
+    width: 190px;
+    height: 31px;
+    margin: 0 auto;
+    margin-top: 16px;
+    padding: 8px; /*Espacio interno*/
+    background-color: var(--soft-orange);
+    border-radius: 8px;
+}
+.currency-table--date p{
+    font-family: "Inter";
+    font-size: 1.2rem;
+    font-weight: 300; /*Cortamos la herencia hecha con anterioridad, este es un problema muy normal*/
+    line-height: 1.5rem;
+    color: var(--warm-black);
+}
+.main-commissions-table{
+    width: 50%;
+    min-width: 235px;
+    max-width: 500px;
+    height: 360px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+}
+.commissions-table--date{
+    width: 190px;
+    height: 31px;
+    margin: 0 auto;
+    margin-top: 16px;
+    padding: 8px;
+    background-color: var(--soft-blue);
+    border-radius: 8px;
+}
+.commissions-table--date p{
+    font-family: "Inter";
+    font-size: 1.2rem;
+    font-weight: 300; /*Cortamos la herencia hecha con anterioridad, este es un problema muy normal*/
+    line-height: 1.6rem;
+    color: var(--black);
+}
+.main-commissions-table .commissions-table--title{
+    margin-bottom: 12px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--secondary-blue);
+}
+.main-product-detail{
+    position: relative;
+    width: 100%;
+    min-width: 320px; /*Importante*/
+    height: auto;
+    padding: 20px 10px; /*Dar separación*/
+    background-color: var(--warm-black);
+}
+.product-detail--bitata-logo{
+    position: absolute; /*Posicionarla como flotante, busca el primer relative, por eso tenemos que ponerlo en contenedor padre directo*/
+    width: 40px;
+    height: 24px;
+    top: -10px;
+    left: calc(50% - 20px);
+    background-image: url('./assets/imgs/logo-image.svg');
+    background-size: cover;
+    background-position: center;
+}
+.product-detail--title{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 51px;
+    text-align: center;
+}
+.main-product-detail .product-detail--title h2{
+    margin-bottom: 24px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--just-white);
+}
+.main-product-detail .product-detail--title p{
+    margin-bottom: 32px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+.product-cards--container{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    height: 152px;
+    background-color: var(--black);
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+    padding: 16px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+}
+.product-detail--card .clock{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 12px;
+    background-image: url('./assets/icons/clock.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.product-detail--card .product--card-title{
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--just-white);
+}
+
+.product-detail--card .product--card-body{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+.product-detail--card .eye{
+    display: inline-block;
+    margin-bottom: 12px;
+    width: 20px;
+    height: 20px;
+    background-image: url('./assets/icons/eye.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.product-detail--card .dolar-sign{
+    display: inline-block;
+    margin-bottom: 12px;
+    width: 20px;
+    height: 20px;
+    background-image: url('./assets/icons/dolar-sign.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.product-detail--card .check-circle{
+    display: inline-block;
+    margin-bottom: 12px;
+    width: 20px;
+    height: 20px;
+    background-image: url('./assets/icons/check-circle.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bitcoin-img-container{
+    width: 100%;
+    min-width: 320px;
+    height: 516px;
+    background-image: url('./assets/imgs/bitcoingirl.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bitcoin-img-container h2{
+    padding-top: 64px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    text-align: center;
+    color: var(--just-white);
+}
+.plan-section .plan--title h2{
+    margin-top: 64px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--warm-black);
+    text-align: center;
+}
+.plan-section .plan--title p{
+    margin-top: 24px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color:#757575;
+    text-align: center;
+}
+.main-plans-container{
+    width: 100%;
+    min-width: 320px;
+    height: 540px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    text-align: center;
+    background-color: #E5E5E5;
+}
+.plans--title{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.main-plans-container .plans--title h2{
+    margin: 0 17px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--warm-black)
+}
+.main-plans-container .plans--title p{
+    margin: 0 auto;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    margin-top: 24px;
+    color: #757575;
+}
+.plans-container--slider{
+    display: flex;
+    height: 316px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+.plans-container--card{
+    position: relative;
+    scroll-snap-align: center; /*Es necesario para que el scroll pueda funcionar. Tiene como funcion centrar la vista en la tarjeta que se muestra*/
+    width: 70%;
+    min-width: 190px;
+    max-width: 300px;
+    height: 247px;
+    margin: 20px auto 0;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 0 15px;
+    background-color: var(--just-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16);
+}
+.plans-container--card .recommended{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 31px;
+    top: -15px;
+    left: calc(50% - 60px);
+    background-color: var(--bitcoin-orange);
+    border-radius: 8px;
+    color: var(--just-white);
+    font-family: "Inter";
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.452rem;
+}
+.plan-info-container .plan-card--title{
+    padding-top: 31px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: black;
+}
+.plan-card--price{
+    position: relative;
+    padding: 8px 0;
+    font-size: 5.2rem;
+    font-weight: bold;
+    line-height: 6.3rem;
+    color: black;
+}
+.plan-card--price span{
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: 500;
+    left: calc(50% - 45px);
+    top: -5px;
+}
+.plan-card-saving{
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.4rem;
+    color: #757575;
+}
+.plan-card--ca{
+    margin: 0 auto;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 151px;
+    max-width: 320px;
+    height: 48px;
+    background-color: var(--off-white);
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--warm-black);
+}
+.plan-card--ca span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    margin-left: 8px;
+    background-image: url('./assets/icons/arrow-right.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+footer{
+    display: flex; /*Para que estén uno enfrente del otro*/
+    width: 100%;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+}
+footer section{
+    display: flex;
+    width: 50%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+footer .left-footer ul{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+}
+footer .left-footer li{
+    margin: 8px 0;
+}
+footer .left-footer ul a{
+    color: var(--just-white);
+    text-decoration: none;
+}
+
+
+
